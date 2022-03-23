@@ -4,6 +4,7 @@
         var assets = require('*/cartridge/scripts/assets');
         assets.addJs('/js/productDetail.js');
         assets.addCss('/css/product/detail.css');
+        assets.addJs('js/customProductDetails.js');
     </isscript>
 
     <isset name="product" value="${pdict.product}" scope="page" />
@@ -89,6 +90,12 @@
                                 <isinclude template="product/components/options" />
                             </isif>
                         </div>
+
+                        <div style="display:none" id="embrd-input">
+                            <label>Embroidery Text </label>
+                            <input id="embrd-input-id" type="text" name="embrd" maxlength="3"/>
+                        </div>
+                        
 
                         <!-- Size Chart -->
                         <isif condition="${product.variationAttributes && product.sizeChartId}">
